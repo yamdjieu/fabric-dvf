@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_silver_communes"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "69f32194-9f0f-a537-43d6-0b880a12b768"
+  }
+}

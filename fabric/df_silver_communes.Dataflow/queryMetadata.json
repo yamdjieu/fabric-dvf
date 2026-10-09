@@ -1,0 +1,29 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowModernEvaluationEngine": true
+  },
+  "name": "df_silver_communes",
+  "queryGroups": [],
+  "documentLocale": "fr-FR",
+  "queriesMetadata": {
+    "communes": {
+      "queryId": "a2b63347-7385-4af8-abd0-9b815bf216c0",
+      "queryName": "communes",
+      "loadEnabled": false
+    },
+    "DefaultDestination": {
+      "queryId": "85a36cd9-0207-4307-a615-b1f259d7a6ee",
+      "queryName": "DefaultDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"31d18369-0750-47a9-b754-8748a60257f1\",\"DatasourceId\":\"7fbee824-56be-46ec-a5d9-643df3e6631f\"}"
+    }
+  ]
+}
