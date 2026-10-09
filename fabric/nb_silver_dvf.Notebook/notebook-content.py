@@ -255,3 +255,18 @@ display(spark.sql("""
 # META   "language": "python",
 # META   "language_group": "synapse_pyspark"
 # META }
+
+# CELL ********************
+
+display(spark.sql("""
+    SELECT COUNT(*) AS nb_lignes,
+           COUNT(DISTINCT code_commune) AS nb_codes_distincts
+    FROM silver.communes
+"""))
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
