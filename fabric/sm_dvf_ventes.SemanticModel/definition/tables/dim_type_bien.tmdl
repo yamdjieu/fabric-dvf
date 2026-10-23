@@ -1,0 +1,55 @@
+table dim_type_bien
+	lineageTag: 79a0a10b-102a-4abc-9ad9-ecffd17c7bd9
+	sourceLineageTag: [gold].[dim_type_bien]
+
+	column type_bien_key
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: b377e8c0-a03b-40e4-a298-2b6aa1a7015d
+		sourceLineageTag: type_bien_key
+		summarizeBy: sum
+		sourceColumn: type_bien_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column type_local
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 10740291-a592-4a0b-b334-df3127bfc2c2
+		sourceLineageTag: type_local
+		summarizeBy: none
+		sourceColumn: type_local
+
+		annotation SummarizationSetBy = Automatic
+
+	column est_neuf
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 2585407c-a504-49a1-a4d2-818d0bc0db0f
+		sourceLineageTag: est_neuf
+		summarizeBy: none
+		sourceColumn: est_neuf
+
+		annotation SummarizationSetBy = Automatic
+
+	column etat
+		dataType: string
+		sourceProviderType: varchar(6)
+		lineageTag: 7db8a2bf-886d-49fd-9148-c515bb0b32d8
+		sourceLineageTag: etat
+		summarizeBy: none
+		sourceColumn: etat
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_type_bien = entity
+		mode: directLake
+		source
+			entityName: dim_type_bien
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

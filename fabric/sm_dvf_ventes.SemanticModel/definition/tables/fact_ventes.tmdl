@@ -1,0 +1,126 @@
+table fact_ventes
+	lineageTag: 83f8b0f1-5688-4021-a92e-e5f1e2dc0a54
+	sourceLineageTag: [gold].[fact_ventes]
+
+	column id_mutation
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 496c15d0-514d-4600-bbf1-362b4ceeda19
+		sourceLineageTag: id_mutation
+		summarizeBy: none
+		sourceColumn: id_mutation
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_key
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: f7301ec8-b23e-4eba-968a-83cd866a812d
+		sourceLineageTag: date_key
+		summarizeBy: sum
+		sourceColumn: date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column code_commune
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 1618bc57-2922-4b31-858b-102d9580bbe6
+		sourceLineageTag: code_commune
+		summarizeBy: none
+		sourceColumn: code_commune
+
+		annotation SummarizationSetBy = Automatic
+
+	column type_bien_key
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 832dd928-8576-4c2f-9f8b-2218d2422b0e
+		sourceLineageTag: type_bien_key
+		summarizeBy: sum
+		sourceColumn: type_bien_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column valeur_fonciere
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 7e59d23e-b6dc-48b0-be10-3f4ae65d760b
+		sourceLineageTag: valeur_fonciere
+		summarizeBy: sum
+		sourceColumn: valeur_fonciere
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column surface_reelle_bati
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 9150f15c-2fc1-4d52-bccc-cc65bda5583d
+		sourceLineageTag: surface_reelle_bati
+		summarizeBy: sum
+		sourceColumn: surface_reelle_bati
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column prix_m2
+		dataType: double
+		sourceProviderType: float
+		lineageTag: ee0af0c6-3928-4a46-b632-a762eb53c8c1
+		sourceLineageTag: prix_m2
+		summarizeBy: sum
+		sourceColumn: prix_m2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column nombre_pieces
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 9bf07cf3-3f2f-4450-b706-b039ae9350c8
+		sourceLineageTag: nombre_pieces
+		summarizeBy: sum
+		sourceColumn: nombre_pieces
+
+		annotation SummarizationSetBy = Automatic
+
+	column longitude
+		dataType: double
+		sourceProviderType: float
+		lineageTag: d49b59a7-10ce-46cc-b6ec-764a0ced683b
+		sourceLineageTag: longitude
+		summarizeBy: sum
+		sourceColumn: longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column latitude
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 9fb8a5fa-48f3-49a9-bf26-bc94367eee11
+		sourceLineageTag: latitude
+		summarizeBy: sum
+		sourceColumn: latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition fact_ventes = entity
+		mode: directLake
+		source
+			entityName: fact_ventes
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

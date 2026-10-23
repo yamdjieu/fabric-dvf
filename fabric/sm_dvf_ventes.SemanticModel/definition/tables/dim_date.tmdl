@@ -1,0 +1,78 @@
+table dim_date
+	lineageTag: c0f69634-08c9-4d8f-a265-ad8efd81e52a
+	sourceLineageTag: [gold].[dim_date]
+
+	column date_key
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 1d629b94-acb7-4495-90ee-4d4bb1c605b4
+		sourceLineageTag: date_key
+		summarizeBy: sum
+		sourceColumn: date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_jour
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 83295449-7b4e-4027-aec9-080cda54b834
+		sourceLineageTag: date_jour
+		summarizeBy: none
+		sourceColumn: date_jour
+
+		annotation SummarizationSetBy = Automatic
+
+	column annee
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 25794d2f-bbde-4590-a63e-25fd7abe4f8b
+		sourceLineageTag: annee
+		summarizeBy: sum
+		sourceColumn: annee
+
+		annotation SummarizationSetBy = Automatic
+
+	column trimestre
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 850cbb19-3150-447a-a5e2-089ea0922216
+		sourceLineageTag: trimestre
+		summarizeBy: sum
+		sourceColumn: trimestre
+
+		annotation SummarizationSetBy = Automatic
+
+	column mois
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 0f4aed70-924e-4008-ad31-4b15c2390a57
+		sourceLineageTag: mois
+		summarizeBy: sum
+		sourceColumn: mois
+
+		annotation SummarizationSetBy = Automatic
+
+	column annee_mois
+		dataType: string
+		sourceProviderType: varchar(26)
+		lineageTag: fcf1d84c-a79f-4603-9f38-23695ad00f3f
+		sourceLineageTag: annee_mois
+		summarizeBy: none
+		sourceColumn: annee_mois
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_date = entity
+		mode: directLake
+		source
+			entityName: dim_date
+			schemaName: gold
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+
